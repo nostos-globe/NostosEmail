@@ -8,7 +8,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o profile-service ./cmd/main.go
+RUN go build -o email-service ./cmd/main.go
 
 # Imagen final para producción (más ligera)
 FROM gcr.io/distroless/base-debian12
