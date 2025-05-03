@@ -1,5 +1,5 @@
-FROM golang:1.21-alpine
-
+FROM golang:1.24 AS builder
+ 
 WORKDIR /app
 
 COPY go.mod ./
@@ -8,6 +8,15 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o email-service .
+RUN go build -o profile-service ./cmd/main.go
 
-CMD ["./email-service"]
+# Imagen final para producción (más ligera)
+FROM gcr.io/distroless/base-debian12
+
+WORKDIR /app
+
+# Copia el binario compilado desde el builder
+COPY --from=builder /app/email-service .
+
+# Ejecuta el servicio
+CMD ["/app/email-service"]
