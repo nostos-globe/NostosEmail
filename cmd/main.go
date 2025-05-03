@@ -9,9 +9,8 @@ import (
 )
 
 func main() {
-	if err := godotenv.Load(); err != nil {
-		log.Fatal("❌ Error loading .env file")
-	}
+	// Load .env file if exists, but don't fail if it doesn't
+	_ = godotenv.Load()
 
 	// Debug environment variables
 	log.Printf("SMTP_HOST: %s", os.Getenv("SMTP_HOST"))
