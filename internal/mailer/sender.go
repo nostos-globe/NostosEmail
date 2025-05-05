@@ -62,7 +62,7 @@ func Send(to, subject, body string) error {
 }
 
 func SendConfirmationEmail(to, name, link string) error {
-	body, err := RenderTemplate("internal/templates/welcomeMail.html", map[string]string{
+	body, err := RenderTemplate("./internal/templates/welcomeMail.html", map[string]string{
 		"Name": name,
 		"Link": link,
 	})
@@ -73,7 +73,7 @@ func SendConfirmationEmail(to, name, link string) error {
 }
 
 func SendPasswordResetEmail(to, link string) error {
-	body, err := RenderTemplate("internal/templates/resetPassword.html", map[string]string{
+	body, err := RenderTemplate("./internal/templates/resetPassword.html", map[string]string{
 		"Link": link,
 	})
 	if err != nil {
