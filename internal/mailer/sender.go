@@ -62,18 +62,18 @@ func Send(to, subject, body string) error {
 }
 
 func SendConfirmationEmail(to, name, link string) error {
-	body, err := RenderTemplate("d:/Projects/NostosEmail-1/internal/templates/welcomeMail.html", map[string]string{
+	body, err := RenderTemplate("internal/templates/welcomeMail.html", map[string]string{
 		"Name": name,
 		"Link": link,
 	})
 	if err != nil {
 		return err
 	}
-	return Send(to, "Confirm your Nostos account", body)
+	return Send(to, "Welcome to the Nostos family", body)
 }
 
 func SendPasswordResetEmail(to, link string) error {
-	body, err := RenderTemplate("d:/Projects/NostosEmail-1/internal/templates/resetPassword.html", map[string]string{
+	body, err := RenderTemplate("internal/templates/resetPassword.html", map[string]string{
 		"Link": link,
 	})
 	if err != nil {
