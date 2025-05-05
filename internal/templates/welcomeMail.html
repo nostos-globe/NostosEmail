@@ -1,10 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <body style="font-family: Arial, sans-serif; line-height: 1.6;">
-    <h2>¡Bienvenido a Nostos, {{.Name}}!</h2>
-    <p>Tu cuenta ha sido creada exitosamente.</p>
-    <p>Ya puedes iniciar sesión y comenzar a usar la plataforma.</p>
-    <br>
-    <p>— El equipo de Nostos</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome to Nostos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 40px auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header img {
+        max-width: 150px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #2c3e50;
+        font-size: 24px;
+      }
+
+      p {
+        color: #555555;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .cta-button {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 24px;
+        background-color: #1d72b8;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #155d8b;
+      }
+
+      .footer {
+        margin-top: 40px;
+        font-size: 14px;
+        color: #999999;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        <img src="nostos_logo.png" alt="Nostos Logo" />
+      </div>
+      <h2>Welcome to Nostos, {{.Name}}!</h2>
+      <p>We’re thrilled to have you join us.</p>
+      <p>Your account has been successfully created. You can now log in to the platform and start exploring all its features.</p>
+      <p class="footer">If you have any questions, feel free to contact us at <a href="mailto:soporte@nostos.com">soporte@nostos.com</a>.</p>
+      <div class="footer">© 2025 Nostos. All rights reserved.</div>
+    </div>
   </body>
 </html>
